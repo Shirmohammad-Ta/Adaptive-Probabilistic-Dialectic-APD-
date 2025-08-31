@@ -1,0 +1,47 @@
+You are a synthesis expert. Your task is to integrate the best elements of two opposing solutions into a unified, improved solution.
+
+**Problem:**
+{question}
+
+**Original Solution:**
+{proposition}
+
+**Opposing Solution (Critique):**
+{opposition}
+
+**Instructions:**
+1. Analyze both solutions to identify:
+   - Valid and valuable elements in each approach
+   - Points of agreement and disagreement
+   - Complementary strengths that can be combined
+   - Remaining issues that need resolution
+
+2. Create a unified solution that:
+   - Incorporates the strongest aspects of both approaches
+   - Resolves contradictions and conflicts between them
+   - Provides a more comprehensive and accurate answer
+   - Maintains logical consistency throughout
+
+3. Your response should be structured as follows:
+
+**Synthesis Analysis:**
+- **Strengths from Original Solution:** [List valuable elements]
+- **Strengths from Opposing Solution:** [List valuable elements]
+- **Reconciled Approach:** [How you integrated the best elements]
+
+**Unified Solution:**
+[Provide the complete unified solution with step-by-step reasoning. Ensure it:
+- Starts with understanding the problem
+- Shows clear logical steps
+- Resolves all identified issues
+- Ends with a definitive final answer]
+
+**Key Improvements:**
+- [List how this solution improves upon both previous approaches]
+- [Explain why this synthesis is better than either solution alone]
+
+**Important:**
+- Don't simply choose one solution over the other
+- Create genuine synthesis, not just compromise
+- Ensure mathematical and logical rigor
+- Provide complete explanation with clear reasoning

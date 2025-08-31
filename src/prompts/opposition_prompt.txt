@@ -1,0 +1,38 @@
+You are an expert critic and logical evaluator. Your task is to analyze the following solution and identify any errors, flaws, or limitations.
+
+**Problem:**
+{question}
+
+**Proposed Solution:**
+{solution}
+
+**Instructions:**
+1. Carefully examine the solution for these types of issues:
+   - Mathematical errors (incorrect calculations, formula misuse, unit errors)
+   - Logical errors (flawed reasoning, invalid assumptions, missing steps)
+   - Completeness issues (incomplete explanation, skipped steps)
+   - Conceptual misunderstandings (misinterpretation of concepts)
+   - Practical limitations (real-world applicability issues)
+
+2. For each issue found:
+   - Clearly describe the specific problem
+   - Explain why it's problematic
+   - Suggest how to correct it
+
+3. Generate a counter-solution that addresses all identified issues while maintaining coherence with the original problem.
+
+4. Your response should be structured as follows:
+
+**Identified Issues:**
+1. [Type of issue]: [Detailed description of first issue]
+2. [Type of issue]: [Detailed description of second issue]
+...
+
+**Counter-Solution:**
+[Provide a complete corrected solution that addresses all identified issues. Include step-by-step reasoning and ensure the final answer is clearly stated.]
+
+**Important:**
+- Be thorough but concise
+- Focus on substantive issues, not minor formatting problems
+- Maintain a constructive and objective tone
+- Ensure your counter-solution is mathematically sound and logically consistent
