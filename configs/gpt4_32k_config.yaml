@@ -1,0 +1,105 @@
+# Configuration for GPT-4-32k model
+model:
+  name: "gpt-4-32k"
+  version: "0613"
+  context_length: 32768
+  max_tokens: 4096
+  default_temperature: 0.7
+  timeout: 60  # Longer timeout for larger context
+
+apd_parameters:
+  # Temperature settings (more conservative for larger model)
+  tau_min: 0.2
+  tau_max: 0.7
+  tau_a: 0.4
+  beta: 2.5  # Faster decay
+  
+  # Novelty detection (more precise)
+  gamma: 0.25
+  novelty_metric: "cosine"
+  novelty_window_size: 2
+  
+  # SPRT configuration (more sensitive)
+  sprt:
+    p0: 0.15
+    p1: 0.55
+    alpha: 0.03
+    beta: 0.03
+  
+  # Iteration limits
+  max_iterations: 3
+  min_iterations: 1
+
+generation_parameters:
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  top_p: 0.97  # Higher top_p for more diversity
+  stop_sequences: ["\n\n", "###", "---"]
+  
+  # Response formatting
+  response_format: "text"
+  max_retries: 3
+  retry_delay: 2
+
+optimization:
+  # Batch processing
+  batch_size: 1
+  parallel_requests: 1
+  
+  # Caching
+  enable_caching: true
+  cache_ttl: 1800  # Shorter cache for more dynamic responses
+  
+  # Cost optimization (important for expensive model)
+  enable_token_count: true
+  max_tokens_per_minute: 20000
+
+monitoring:
+  # Logging
+  log_level: "WARNING"  # Less verbose logging
+  enable_metrics: true
+  metrics_interval: 120
+  
+  # Performance tracking
+  track_latency: true
+  track_token_usage: true
+  track_quality_metrics: true
+
+prompt_config:
+  # Prompt templates
+  opposition_prompt: "prompts/opposition_prompt.txt"
+  unification_prompt: "prompts/unification_prompt.txt"
+  novelty_prompt: "prompts/novelty_assessment_prompt.txt"
+  
+  # Prompt optimization
+  enable_prompt_compression: false
+  max_prompt_tokens: 12000  # Larger context allows longer prompts
+  system_message: "You are an expert analyst with deep domain knowledge."
+
+safety:
+  # Content moderation
+  enable_moderation: true
+  moderation_threshold: 0.9
+  max_rejection_count: 3
+  
+  # Ethical constraints
+  allow_controversial_topics: true  # More permissive for research
+  max_controversy_level: 0.5
+
+cost_management:
+  # Rate limiting (more restrictive for expensive model)
+  requests_per_minute: 20
+  tokens_per_minute: 15000
+  
+  # Budget control (strict for expensive model)
+  max_cost_per_session: 1.00
+  max_cost_per_day: 5.00
+  currency: "USD"
+
+advanced:
+  # Fine-tuning parameters
+  enable_fine_tuning: false
+  fine_tuned_model: ""
+  
+  # Custom parameters
+  custom_parameters: {}

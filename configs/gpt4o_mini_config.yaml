@@ -1,0 +1,97 @@
+# Configuration for GPT-4o-mini model
+model:
+  name: "gpt-4o-mini"
+  version: "2024-07-18"
+  context_length: 128000
+  max_tokens: 4096
+  default_temperature: 0.7
+  timeout: 45  # Longer timeout for smaller model
+
+apd_parameters:
+  # Temperature settings (more exploration for smaller model)
+  tau_min: 0.4
+  tau_max: 0.9
+  tau_a: 0.6
+  beta: 1.5  # Slower decay
+  
+  # Novelty detection (more sensitive)
+  gamma: 0.4
+  novelty_metric: "cosine"
+  novelty_window_size: 3
+  
+  # SPRT configuration (more conservative)
+  sprt:
+    p0: 0.3
+    p1: 0.7
+    alpha: 0.1
+    beta: 0.1
+  
+  # Iteration limits
+  max_iterations: 4  # More iterations for smaller model
+  min_iterations: 2
+
+generation_parameters:
+  frequency_penalty: 0.1
+  presence_penalty: 0.1
+  top_p: 0.90
+  stop_sequences: ["\n\n", "###", "---"]
+  
+  # Response formatting
+  response_format: "text"
+  max_retries: 5  # More retries for stability
+  retry_delay: 3
+
+optimization:
+  # Batch processing
+  batch_size: 1
+  parallel_requests: 1
+  
+  # Caching
+  enable_caching: true
+  cache_ttl: 7200  # Longer cache for smaller model
+  
+  # Cost optimization
+  enable_token_count: true
+  max_tokens_per_minute: 20000  # Higher limit for smaller model
+
+monitoring:
+  # Logging
+  log_level: "DEBUG"  # More detailed logging
+  enable_metrics: true
+  metrics_interval: 30
+  
+  # Performance tracking
+  track_latency: true
+  track_token_usage: true
+  track_quality_metrics: true
+
+prompt_config:
+  # Prompt templates
+  opposition_prompt: "prompts/opposition_prompt.txt"
+  unification_prompt: "prompts/unification_prompt.txt"
+  novelty_prompt: "prompts/novelty_assessment_prompt.txt"
+  
+  # Prompt optimization (more important for smaller model)
+  enable_prompt_compression: true
+  max_prompt_tokens: 6000
+  system_message: "You are a careful and thorough problem solver."
+
+safety:
+  # Content moderation
+  enable_moderation: true
+  moderation_threshold: 0.7  # Stricter moderation
+  max_rejection_count: 2
+  
+  # Ethical constraints
+  allow_controversial_topics: false
+  max_controversy_level: 0.2
+
+cost_management:
+  # Rate limiting
+  requests_per_minute: 100  # Higher rate limit
+  tokens_per_minute: 80000
+  
+  # Budget control (more generous for cheaper model)
+  max_cost_per_session: 0.20
+  max_cost_per_day: 20.00
+  currency: "USD"
