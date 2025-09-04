@@ -47,10 +47,13 @@ export OPENAI_API_KEY='your-api-key-here'
 
 ---
 
-## 🚀 Quick Start
+# Adaptive Probabilistic Dialectic (APD) Framework
+
+🚀 Quick Start
+
+## Basic Usage
 
 ```python
-# Basic Usage
 from src.apd_core import APDDialectic
 from config_loader import ConfigLoader
 
@@ -75,49 +78,129 @@ print(f"Final solution: {result['final_solution']}")
 print(f"Iterations: {result['total_iterations']}")
 ```
 
----
+## Example Runs
 
-## 🔬 Research Basis
+* Mathematical Reasoning:
 
-APD integrates concepts from:
+```bash
+python examples/gsm8k_example.py
+```
 
-- **Hegelian Dialectics** (Thesis–Antithesis–Synthesis)  
-- **Sequential Probability Ratio Test** (Optimal stopping)  
-- **Simulated Annealing** (Temperature scheduling)  
-- **Semantic Similarity** (Novelty measurement)  
+* Creative Idea Generation:
 
----
+```bash
+python examples/idea_generation_example.py
+```
 
-## 🚧 Limitations and Future Work
+* Custom Datasets:
 
-**Current Limitations**  
-- Dependency on external LLM APIs  
-- Limited to text-based reasoning tasks  
-- Requires careful prompt engineering  
+```bash
+python examples/custom_dataset_example.py
+```
 
-**Planned Enhancements**  
-- Support for local LLM models  
-- Multi-modal capabilities  
-- Automated prompt optimization  
-- Real-time adaptation learning  
+🏗️ **Architecture**
 
----
+```
+APD/
+├── src/
+│   ├── apd_core.py          # Main dialectical algorithm
+│   ├── novelty_metric.py    # Semantic novelty calculation
+│   ├── temperature_scheduler.py # Adaptive temperature control
+│   └── sprt_optimizer.py    # Optimal stopping with SPRT
+├── configs/
+│   ├── gpt4o_config.yaml    # Model-specific configurations
+│   ├── gpt4o_mini_config.yaml
+│   └── gpt4_32k_config.yaml
+├── examples/                # Usage examples
+├── prompts/                 # Prompt templates
+└── results/                 # Output analysis and visualization
+```
 
-## 🤝 Contributing
+⚙️ **Configuration**
 
-We welcome contributions! Please see our contributing guidelines:
+* APD uses YAML configuration files for model-specific tuning.
 
-1. Fork the repository  
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)  
-3. Commit changes (`git commit -m 'Add amazing feature'`)  
-4. Push to branch (`git push origin feature/amazing-feature`)  
-5. Open a Pull Request  
+Example:
 
----
+```yaml
+# configs/gpt4o_config.yaml
+model:
+  name: "gpt-4o"
+  max_tokens: 4096
+  timeout: 30
 
-## 📝 Citation
+apd_parameters:
+  tau_min: 0.3
+  tau_max: 0.9
+  gamma: 0.3
+  max_iterations: 3
+```
 
-If you use APD in your research, please cite:
+Available configurations:
+
+* `gpt4o_config.yaml`: Optimized for GPT-4o
+* `gpt4o_mini_config.yaml`: Tuned for GPT-4o-mini
+* `gpt4_32k_config.yaml`: Configured for GPT-4-32k
+
+📊 **Performance**
+
+* GSM8K Mathematical Reasoning
+  \| Model | Baseline | APD | Improvement |
+  \|-------|---------|-----|-------------|
+  \| GPT-4o | 95.1% | 96.3% | +1.26% |
+  \| GPT-4o-mini | 93.7% | 95.2% | +1.60% |
+  \| GPT-4-32k | 95.2% | 96.6% | +1.47% |
+
+Efficiency Metrics:
+
+* 28% reduction in unnecessary iterations
+* 22% faster convergence compared to fixed iteration approaches
+* Adaptive computation based on problem complexity
+
+🎨 **Customization**
+
+* Custom Prompts: Modify prompt templates in `prompts/` directory.
+* Novelty Metrics: Implement custom novelty measures using `novelty_metric.py`
+
+📈 **Results Analysis**
+
+* Results are stored in structured format under `results/` directory.
+* Analyze results with provided tools:
+
+```bash
+python analyze_results.py results/gsm8k/2024-01-15/results.json
+python generate_plots.py results/gsm8k/2024-01-15/results.json
+```
+
+🔬 **Research Basis**
+
+* Hegelian Dialectics (Thesis-Antithesis-Synthesis)
+* Sequential Probability Ratio Test (Optimal stopping)
+* Simulated Annealing (Temperature scheduling)
+* Semantic Similarity (Novelty measurement)
+
+🚧 **Limitations and Future Work**
+
+* Dependency on external LLM APIs
+* Limited to text-based reasoning tasks
+* Requires careful prompt engineering
+
+Planned Enhancements:
+
+* Support for local LLM models
+* Multi-modal capabilities
+* Automated prompt optimization
+* Real-time adaptation learning
+
+🤝 **Contributing**
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push branch
+5. Open a Pull Request
+
+📝 **Citation**
 
 ```bibtex
 @software{apd2024,
@@ -128,26 +211,18 @@ If you use APD in your research, please cite:
 }
 ```
 
----
+📄 **License**
 
-## 📄 License
+* MIT License (see LICENSE file)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
+🙏 **Acknowledgments**
 
----
+* Inspired by Hegelian philosophical principles
+* Built upon advancements in LLM self-reflection research
+* Thanks to the open-source community
 
-## 🙏 Acknowledgments
+📞 **Support**
 
-- Inspired by Hegelian philosophical principles  
-- Built upon advancements in LLM self-reflection research  
-- Thanks to the open-source community for foundational tools  
-
----
-
-## 📞 Support
-
-For questions and support:  
-
-📧 Email: **your-email@example.com**  
-🐛 Issues: [GitHub Issues](../../issues)  
-💬 Discussions: [GitHub Discussions](../../discussions)
+* Email: [Shirmohammad Tavangari](s.tavangari@alumni.ubc.ca)
+* Issues: GitHub Issues
+* Discussions: GitHub Discussions
