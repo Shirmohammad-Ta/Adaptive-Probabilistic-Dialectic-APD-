@@ -47,7 +47,7 @@ export OPENAI_API_KEY='your-api-key-here'
 
 ---
 
-# Adaptive Probabilistic Dialectic (APD) Framework
+
 
 🚀 Quick Start
 
@@ -145,11 +145,13 @@ Available configurations:
 📊 **Performance**
 
 * GSM8K Mathematical Reasoning
-  \| Model | Baseline | APD | Improvement |
-  \|-------|---------|-----|-------------|
-  \| GPT-4o | 95.1% | 96.3% | +1.26% |
-  \| GPT-4o-mini | 93.7% | 95.2% | +1.60% |
-  \| GPT-4-32k | 95.2% | 96.6% | +1.47% |
+
+| Model       | Baseline | APD  | Improvement |
+|------------|---------|------|-------------|
+| GPT-4o     | 95.1%   | 96.3% | +1.26%      |
+| GPT-4o-mini| 93.7%   | 95.2% | +1.60%      |
+| GPT-4-32k  | 95.2%   | 96.6% | +1.47%      |
+
 
 Efficiency Metrics:
 
