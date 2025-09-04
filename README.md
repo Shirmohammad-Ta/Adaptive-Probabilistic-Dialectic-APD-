@@ -223,8 +223,8 @@ Planned Enhancements:
 * Built upon advancements in LLM self-reflection research
 * Thanks to the open-source community
 
-📞 **Support**
-
-* Email: [Shirmohammad Tavangari](s.tavangari@alumni.ubc.ca)
-* Issues: GitHub Issues
-* Discussions: GitHub Discussions
+## 📞 Contact
+- **Author:** Shirmohammad Tavangari  
+- **Email:** s.tavangari@alumni.ubc.ca  
+- **Institution:** University of British Columbia
+- **Here is the link to the paper:**
